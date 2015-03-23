@@ -3,8 +3,6 @@
 #include <linux/slab.h>
 #include <linux/init.h>
 
-#include "dumpcode.h"
-
 typedef struct element_s {
   int data;
   struct element_s *next;
