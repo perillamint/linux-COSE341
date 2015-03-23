@@ -343,6 +343,8 @@
 #define __NR_rt_tgsigqueueinfo	335
 #define __NR_perf_event_open	336
 #define __NR_recvmmsg		337
+#define __NR_my_enqueue         338
+#define __NR_my_dequeue         339
 
 #ifdef __KERNEL__
 
