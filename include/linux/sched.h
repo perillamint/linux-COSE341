@@ -1164,6 +1164,12 @@ struct sched_rt_entity {
 
 struct rcu_node;
 
+/* Struct for tag. */
+struct task_tag {
+  char *tag;
+  long taglen;
+};
+
 struct task_struct {
 	volatile long state;	/* -1 unrunnable, 0 runnable, >0 stopped */
 	void *stack;
@@ -1498,6 +1504,7 @@ struct task_struct {
 		unsigned long memsw_bytes; /* uncharged mem+swap usage */
 	} memcg_batch;
 #endif
+  struct task_tag *tag;
 };
 
 /* Future-safe accessor for struct task_struct's cpus_allowed. */

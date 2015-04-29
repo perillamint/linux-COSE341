@@ -339,3 +339,5 @@ ENTRY(sys_call_table)
 	.long sys_recvmmsg
 	.long sys_my_enqueue
 	.long sys_my_dequeue
+	.long sys_set_task_tag
+	.long sys_get_task_tag

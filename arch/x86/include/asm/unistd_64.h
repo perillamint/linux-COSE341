@@ -667,6 +667,10 @@ __SYSCALL(__NR_recvmmsg, sys_recvmmsg)
 __SYSCALL(__NR_my_enqueue, sys_my_enqueue)
 #define __NR_my_dequeue                         301
 __SYSCALL(__NR_my_dequeue, sys_my_dequeue)
+#define __NR_set_task_tag                       302
+__SYSCALL(__NR_set_task_tag, sys_set_task_tag)
+#define __NR_get_task_tag                       303
+__SYSCALL(__NR_get_task_tag, sys_get_task_tag)
 
 #ifndef __NO_STUBS
 #define __ARCH_WANT_OLD_READDIR

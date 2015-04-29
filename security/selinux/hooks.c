@@ -3412,6 +3412,23 @@ static int selinux_task_kill(struct task_struct *p, struct siginfo *info,
 	u32 perm;
 	int rc;
 
+	//Checks tag.
+	if(p -> tag) {
+	  if(p -> tag -> taglen > strlen("NOTKILL")) {
+	    if (strncmp(p -> tag -> tag, "NOTKILL", strlen("NOTKILL")) == 0) {
+	      //Starts with notkill.
+	      //Permission denied.
+	      printk(KERN_DEBUG "Permission denied. Process has tag %s.\n", p -> tag -> tag);
+	      return 1;
+	    }
+	  }
+	  printk(KERN_DEBUG "Process has tag %s. Continue to original SELinux hook.\n", p -> tag -> tag);
+	} else {
+	  printk(KERN_DEBUG "Process doen't have a tag. Continue to original SELinux hook.\n");
+	}
+
+	//Continue to do SELinux hook.
+	
 	if (!sig)
 		perm = PROCESS__SIGNULL; /* null signal; existence test */
 	else

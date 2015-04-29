@@ -345,6 +345,8 @@
 #define __NR_recvmmsg		337
 #define __NR_my_enqueue         338
 #define __NR_my_dequeue         339
+#define __NR_set_task_tag       340
+#define __NR_get_task_tag       341
 
 #ifdef __KERNEL__
 

@@ -828,5 +828,7 @@ asmlinkage long sys_old_mmap(struct mmap_arg_struct __user *arg);
 
 asmlinkage void sys_my_enqueue(int a);
 asmlinkage int sys_my_dequeue(void);
+asmlinkage long sys_set_task_tag(pid_t pid, const char __user *tagstr, long taglen);
+asmlinkage long sys_get_task_tag(pid_t pid, const char __user *tagstr, long taglen);
 
 #endif
